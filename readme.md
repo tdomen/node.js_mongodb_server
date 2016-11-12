@@ -34,32 +34,32 @@ backend
 ### スクリプト  
 
 #### /nodejs_installer.sh  
-    * このサーバを動かすために必要なもの一式揃えるシェルスクリプト  
+* このサーバを動かすために必要なもの一式揃えるシェルスクリプト  
 
 #### /app.js  
-    * 「node app.js」で動かす本体  
-    * 各種モジュールのインクルード，サーバのクリエイト，MongoDBへのコネクション作成
+* 「node app.js」で動かす本体  
+* 各種モジュールのインクルード，サーバのクリエイト，MongoDBへのコネクション作成
 
 #### /models/user.js  
-    * ユーザのスキーマ定義
+* ユーザのスキーマ定義
 
 #### /models/zukan.js  
-    * ユーザが獲得したキーのスキーマ定義
+* ユーザが獲得したキーのスキーマ定義
 
 #### /routes/auth/login.js  
-    * フロントエンドからusernameとpasswordを受け取る
-    * DBを参照して，usernameがなければ新規登録，あればpasswordと照合してtrue/falseをフロントエンドに返す  
+* フロントエンドからusernameとpasswordを受け取る
+* DBを参照して，usernameがなければ新規登録，あればpasswordと照合してtrue/falseをフロントエンドに返す  
 
 #### /routes/zukan/zukan.js  
-    * ユーザが獲得したキーのDB参照およびインサート処理  
-    * フロントエンドからのGET/POSTリクエストで処理が分岐  
-    * GETリクエストの場合  
-        * DB内のusernameで検索  
-        * 参照されたキーを一次元配列に格納し，フロントエンドに返す  
-    * POSTリクエストの場合  
-        * フロントエンドが獲得したキーをjson形式で本サーバに渡す  
-        * POSTで取得したjsonをパースして，キーのみを取り出す  
-        * DBにusernameで参照  
-        * usernameが存在しない場合，usernameとキーを登録  
-        * usernameが存在する場合，DBからキーをjson形式で取り出して，POSTで取得したキーを配列に格納しDBをupdateする  
+* ユーザが獲得したキーのDB参照およびインサート処理  
+* フロントエンドからのGET/POSTリクエストで処理が分岐  
+* GETリクエストの場合  
+    * DB内のusernameで検索  
+    * 参照されたキーを一次元配列に格納し，フロントエンドに返す  
+* POSTリクエストの場合  
+    * フロントエンドが獲得したキーをjson形式で本サーバに渡す  
+    * POSTで取得したjsonをパースして，キーのみを取り出す  
+    * DBにusernameで参照  
+    * usernameが存在しない場合，usernameとキーを登録  
+    * usernameが存在する場合，DBからキーをjson形式で取り出して，POSTで取得したキーを配列に格納しDBをupdateする  
 
