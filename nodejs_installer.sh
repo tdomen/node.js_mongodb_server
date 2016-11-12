@@ -8,7 +8,7 @@ nvm install 4.4.7
 
 nvm alias default v4.4.7
 
-SHRC='.bashrc'
+SHRC='~/.bashrc'
 
 cd ~
 cat <<'EOT' >> $SHRC
@@ -17,6 +17,8 @@ if [[ -s ~/.nvm/nvm.sh ]];
 fi
 EOT
 
+
+npm init
 npm install --save express
 npm install --save bodyParser
 npm install mongoose
